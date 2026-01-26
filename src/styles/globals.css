@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-red: #DC2626;
+  --primary-dark: #991B1B;
+  --secondary-blue: #1E40AF;
+  --secondary-dark: #1E3A8A;
+  --bg-primary: #0F0F0F;
+  --bg-secondary: #1A1A1A;
+  --bg-card: #252525;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1A1;
+  --text-muted: #6B6B6B;
+  --accent-gold: #F59E0B;
+  --accent-green: #10B981;
+  --accent-purple: #8B5CF6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Selección de texto */
+::selection {
+  background: var(--primary-red);
+  color: white;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-red hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-red/25;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-blue hover:bg-secondary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-red text-primary-red hover:bg-primary-red hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-bg-card/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-primary-red/50;
+  }
+
+  .card-hover {
+    @apply hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-red/10;
+  }
+
+  .input-field {
+    @apply w-full bg-bg-secondary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-text-muted focus:outline-none focus:border-primary-red focus:ring-2 focus:ring-primary-red/20 transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-red via-accent-gold to-secondary-blue;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

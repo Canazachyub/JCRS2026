@@ -79,36 +79,223 @@ export const DOCUMENTACION = {
   },
 }
 
-// Formularios de inscripción FASE 1
-export const FORMULARIOS_FASE1 = {
-  casosClinicos: {
-    nombre: 'Inscripción Casos Clínicos',
-    fase: 'FASE 1',
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSf4UZdXUpMnaLpS4e16L8r8-RAd_MyXDKtKnvXzKdc5a14g6Q/viewform',
-    icon: 'Stethoscope',
+// ==========================================
+// FORMULARIOS POR CATEGORÍA
+// ==========================================
+
+// 1. PROTOCOLO DE INVESTIGACIÓN - Formularios
+export const FORMULARIOS_PROTOCOLO = {
+  fase1: {
+    inscripcion: {
+      nombre: 'Inscripción y Envío de Documentación',
+      descripcion: 'Fase I - Recepción de documentación',
+      url: 'https://forms.gle/oCptzZiYbmNEyPRN9',
+    },
+    correcciones: {
+      nombre: 'Subsanación de Observaciones',
+      descripcion: 'Correcciones de documentación',
+      url: 'https://forms.gle/4qAWRGLFzH5eHF8D8',
+    },
   },
-  protocolo: {
-    nombre: 'Inscripción Proyecto de Investigación',
-    fase: 'FASE 1',
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSe2GnZ8AgXMKmysPwh4yhYoFMRGGf3Sfxq7sk2pH01JILAJYQ/viewform',
-    icon: 'FlaskConical',
+  fase2: {
+    diapositivas: {
+      nombre: 'Envío de Diapositivas',
+      descripcion: 'Diapositivas para Fase I y II',
+      url: 'https://forms.gle/mpQJkndsRoeQSHqcA',
+    },
+    confirmacionExpositor: {
+      nombre: 'Confirmación de Autor Expositor y Ética',
+      descripcion: 'Fase II',
+      url: 'https://forms.gle/rtm1pv6YL2HrhHFk6',
+    },
+    cambioExpositor: {
+      nombre: 'Solicitud de Reemplazo de Expositor',
+      descripcion: 'Fase II',
+      url: 'https://forms.gle/LQqfuKfXJy8hjzm59',
+    },
   },
-  trabajo: {
-    nombre: 'Inscripción Trabajo de Investigación',
-    fase: 'FASE 1',
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSceGma4drgGLbeuFJM9FGhFAmJ7KG4RA_A9s9DQ2X8tFm0Blw/viewform',
-    icon: 'FileText',
+  faseFinal: {
+    presentacionFinal: {
+      nombre: 'Envío de Versión Final de Presentación',
+      descripcion: 'Fase Final',
+      url: 'https://forms.gle/L3GJrCvB2HUNZVYC8',
+    },
+    cambioExpositor: {
+      nombre: 'Solicitud de Reemplazo de Expositor',
+      descripcion: 'Fase Final',
+      url: 'https://forms.gle/AJb4EUSfoRbJtV77A',
+    },
   },
 }
 
-// Formularios adicionales
-export const FORMULARIOS_EXTRAS = {
-  atlas: {
-    nombre: 'Atlas de Ciencia en Arequipa',
-    descripcion: 'Inscripción para Atlas Científico',
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSc0o_egf7cmSEsvMA6Q3p_R1_64vV-GQW5-TOQilkJxP1iYlA/viewform',
-    icon: 'BookOpen',
+// 2. TRABAJO DE INVESTIGACIÓN - Formularios
+export const FORMULARIOS_TRABAJO = {
+  fase1: {
+    inscripcion: {
+      nombre: 'Inscripción y Envío de Documentación',
+      descripcion: 'Fase I - Manuscrito máx. 3500 palabras',
+      url: 'https://forms.gle/sbaCQAcZ1zFbxpfU6',
+    },
+    correcciones: {
+      nombre: 'Subsanación de Observaciones',
+      descripcion: 'Correcciones de documentación',
+      url: 'https://forms.gle/6Msz8ttePbabtuJf8',
+    },
   },
+  fase2: {
+    diapositivas: {
+      nombre: 'Envío de Diapositivas',
+      descripcion: 'Tras aceptación',
+      url: 'https://forms.gle/p3cAaog4eMb6pAa1A',
+    },
+    confirmacionExpositor: {
+      nombre: 'Confirmación de Autor Expositor y Ética',
+      descripcion: 'Fase II',
+      url: 'https://forms.gle/8RtBP6hKtz6huZxr5',
+    },
+    cambioExpositor: {
+      nombre: 'Solicitud de Reemplazo de Expositor',
+      descripcion: 'Fase II',
+      url: 'https://forms.gle/qeBo5bzzRYSE2NFT7',
+    },
+  },
+}
+
+// 3. CASO CLÍNICO - Formularios (ya existente, actualizado)
+export const FORMULARIOS_CASO_CLINICO = {
+  fase1: {
+    inscripcion: {
+      nombre: 'Inscripción y Envío de Documentación',
+      descripcion: 'Fase I - Incluye Consentimiento Informado',
+      url: 'https://forms.gle/1MWSGJ67abkkHK5N6',
+    },
+    correcciones: {
+      nombre: 'Subsanación de Observaciones',
+      descripcion: 'Correcciones de documentación',
+      url: 'https://forms.gle/7y6dBPSbccE6McvM8',
+    },
+  },
+  fase2: {
+    diapositivas: {
+      nombre: 'Envío de Diapositivas',
+      descripcion: 'Tras aceptación Fase I',
+      url: 'https://forms.gle/icmvpKxZLcADvBHo8',
+    },
+    cambioExpositor: {
+      nombre: 'Solicitud de Reemplazo de Expositor',
+      descripcion: 'Fase II',
+      url: 'https://forms.gle/uM6H72jjtiDrNW396',
+    },
+  },
+  faseFinal: {
+    presentacionFinal: {
+      nombre: 'Envío de Versión Final de Presentación',
+      descripcion: 'Fase Final',
+      url: 'https://forms.gle/PWBNJUCLA196oqHY6',
+    },
+    cambioExpositor: {
+      nombre: 'Solicitud de Reemplazo de Expositor',
+      descripcion: 'Fase Final',
+      url: 'https://forms.gle/S7Ye6hpbrJxnf4EUA',
+    },
+  },
+}
+
+// 4. ATLAS CIENTÍFICO - Formularios
+export const FORMULARIOS_ATLAS = {
+  inscripcion: {
+    nombre: 'Inscripción y Envío de Requisitos',
+    descripcion: 'Álbum PDF/Word 30-40 páginas',
+    url: 'https://forms.gle/xpGxQDSoMhcGRw867',
+  },
+}
+
+// ==========================================
+// CRONOGRAMAS POR CATEGORÍA
+// ==========================================
+
+// 1. PROTOCOLO DE INVESTIGACIÓN - Cronograma
+export const CRONOGRAMA_PROTOCOLO = {
+  nombre: 'Protocolo de Investigación',
+  basesUrl: 'https://drive.google.com/file/d/1Z9f60oSxD_Z-kHd_ZWHyppn0TLnkpmHo/view',
+  topClasificados: 25,
+  topFinal: 5,
+  actividades: [
+    { fecha: '17/01/2026 - 11/02/2026', actividad: 'Recepción de documentación (Fase I)', nota: 'Hasta las 23:59h' },
+    { fecha: '12/02/2026 - 15/02/2026', actividad: 'Prórroga', nota: 'Penalización -5%' },
+    { fecha: '22/02/2026 - 23/02/2026', actividad: 'Envío de observaciones', nota: '' },
+    { fecha: '24/02/2026 - 25/02/2026', actividad: 'Rectificación de observaciones', nota: '' },
+    { fecha: '28/02/2026 - 01/03/2026', actividad: 'Publicación de clasificados - Carta de aceptación Fase II', nota: 'TOP 25' },
+    { fecha: '02/03/2026 - 04/03/2026', actividad: 'Recepción de diapositivas', nota: '' },
+    { fecha: '06/03/2026 - 07/03/2026', actividad: 'Exposición Oral Fase II', nota: '10 min + 8 min preguntas' },
+    { fecha: '08/03/2026', actividad: 'Exposición Final (TOP 5) y Premiación', nota: '' },
+  ],
+}
+
+// 2. TRABAJO DE INVESTIGACIÓN - Cronograma
+export const CRONOGRAMA_TRABAJO = {
+  nombre: 'Trabajo de Investigación',
+  basesUrl: 'https://drive.google.com/file/d/1w7EHNF1FYsxDkDgxkIS3AvfpDsaPv8S4/view',
+  topClasificados: 30,
+  topFinal: 5,
+  actividades: [
+    { fecha: '17/01/2026 - 11/02/2026', actividad: 'Recepción de documentación (Fase I)', nota: 'Manuscrito máx. 3500 palabras' },
+    { fecha: '12/02/2026 - 15/02/2026', actividad: 'Prórroga', nota: 'Penalización -5%' },
+    { fecha: '22/02/2026 - 23/02/2026', actividad: 'Envío de observaciones', nota: '' },
+    { fecha: '24/02/2026 - 25/02/2026', actividad: 'Rectificación de observaciones', nota: '' },
+    { fecha: '28/02/2026 - 01/03/2026', actividad: 'Publicación de clasificados - Carta de aceptación Fase II', nota: 'TOP 30' },
+    { fecha: '02/03/2026 - 04/03/2026', actividad: 'Recepción de diapositivas', nota: '' },
+    { fecha: '06/03/2026 - 07/03/2026', actividad: 'Exposición Oral Fase II', nota: '9:00-16:00h, 10 min + 8 min preguntas' },
+    { fecha: '08/03/2026', actividad: 'Exposición Final (TOP 5) y Premiación', nota: '' },
+  ],
+}
+
+// 3. CASO CLÍNICO - Cronograma
+export const CRONOGRAMA_CASO_CLINICO = {
+  nombre: 'Caso Clínico',
+  basesUrl: 'https://drive.google.com/file/d/1k3lGmoCtnMRsTGEuRAT1zafMPxqFFbcy/view',
+  topClasificados: 15,
+  topFinal: 5,
+  actividades: [
+    { fecha: '19/01/2026 - 11/02/2026', actividad: 'Recepción de documentación (Fase I)', nota: 'Incluye Consentimiento Informado' },
+    { fecha: '12/02/2026 - 15/02/2026', actividad: 'Prórroga', nota: 'Penalización -5%' },
+    { fecha: '22/02/2026 - 23/02/2026', actividad: 'Envío de observaciones', nota: '' },
+    { fecha: '24/02/2026 - 25/02/2026', actividad: 'Rectificación de observaciones', nota: '' },
+    { fecha: '28/02/2026 - 01/03/2026', actividad: 'Carta de aceptación Fase II', nota: 'TOP 15' },
+    { fecha: '02/03/2026 - 04/03/2026', actividad: 'Recepción de diapositivas', nota: '' },
+    { fecha: '06/03/2026 - 07/03/2026', actividad: 'Exposición Oral Fase II', nota: '10 min + 8 min preguntas' },
+    { fecha: '08/03/2026', actividad: 'Exposición Final (TOP 5) y Premiación', nota: '' },
+  ],
+}
+
+// 4. ATLAS CIENTÍFICO - Cronograma
+export const CRONOGRAMA_ATLAS = {
+  nombre: 'Atlas Científico (Fotografía/Ilustración)',
+  basesUrl: 'https://drive.google.com/file/d/1ObbL4DWFgnVtRpAa0V_hFR0E4rijY1Xo/view',
+  actividades: [
+    { fecha: '23/01/2026', actividad: 'Apertura de convocatoria', nota: '' },
+    { fecha: '21/02/2026', actividad: 'Cierre de recepción', nota: 'Álbum PDF/Word 30-40 páginas' },
+    { fecha: '28/02/2026', actividad: 'Publicación de finalistas', nota: '' },
+    { fecha: '07/03/2026', actividad: 'Exposición Oral', nota: '9 min + 5 min preguntas' },
+    { fecha: '08/03/2026', actividad: 'Premiación', nota: '' },
+  ],
+}
+
+// CALENDARIO GENERAL - Fechas Clave
+export const CALENDARIO_GENERAL = [
+  { fecha: '17-19/01/2026', evento: 'Inicio de convocatorias' },
+  { fecha: '11/02/2026', evento: 'Cierre recepción Protocolo, Trabajo y Caso Clínico' },
+  { fecha: '15/02/2026', evento: 'Fin de prórroga (todas las categorías excepto Atlas)' },
+  { fecha: '21/02/2026', evento: 'Cierre Atlas Científico' },
+  { fecha: '22-25/02/2026', evento: 'Período de observaciones y rectificaciones' },
+  { fecha: '28/02-01/03/2026', evento: 'Publicación de clasificados' },
+  { fecha: '02-04/03/2026', evento: 'Recepción de diapositivas' },
+  { fecha: '06-07/03/2026', evento: 'Exposiciones Orales Fase II' },
+  { fecha: '08/03/2026', evento: 'Gran Final y Premiación' },
+]
+
+// Formularios adicionales (Meme Científico)
+export const FORMULARIOS_EXTRAS = {
   meme: {
     nombre: 'Meme Científico',
     descripcion: 'Inscripción para concurso de Meme Científico',

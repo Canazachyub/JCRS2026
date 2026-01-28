@@ -31,7 +31,8 @@ const Inscripcion = () => {
           }}
         />
         {/* Green Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-green/80 via-primary-dark/70 to-bg-primary" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-green/90 via-primary-green/70 to-bg-primary/95" />
+        <div className="absolute inset-0 backdrop-blur-[2px]" />
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -68,7 +69,7 @@ const Inscripcion = () => {
               href={INSCRIPCION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-primary-green hover:bg-primary-dark text-white font-bold text-xl py-4 px-10 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/30 hover:scale-105 border-2 border-white/20"
+              className="inline-flex items-center gap-3 bg-primary-green hover:bg-primary-light text-white font-bold text-xl py-5 px-12 rounded-2xl transition-all duration-300 shadow-lg shadow-primary-green/50 hover:shadow-xl hover:shadow-primary-green/60 hover:scale-105 border-2 border-white/30"
             >
               <ExternalLink className="w-6 h-6" />
               INSCRIBIRME

@@ -3,8 +3,8 @@ import { Loader2 } from 'lucide-react'
 import { classNames } from '../../utils/helpers'
 
 const variants = {
-  primary: 'bg-primary-green hover:bg-primary-dark text-white shadow-lg shadow-primary-green/25 hover:shadow-primary-green/40',
-  secondary: 'bg-secondary-green hover:bg-secondary-dark text-white',
+  primary: 'bg-primary-green hover:bg-primary-light text-white shadow-lg shadow-primary-green/50 hover:shadow-xl hover:shadow-primary-green/60 border border-white/20',
+  secondary: 'bg-secondary-green hover:bg-secondary-dark text-white shadow-md',
   outline: 'border-2 border-primary-green text-primary-green hover:bg-primary-green hover:text-white',
   ghost: 'text-text-secondary hover:text-white hover:bg-white/10',
 }

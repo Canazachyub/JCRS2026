@@ -17,20 +17,26 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    label: 'Telefono',
-    value: LINKS.contacto.telefono,
-    href: `tel:${LINKS.contacto.telefono}`,
+    label: 'Teléfono 1',
+    value: LINKS.contacto.telefono1,
+    href: `tel:${LINKS.contacto.telefono1?.replace(/\s/g, '')}`,
+  },
+  {
+    icon: Phone,
+    label: 'Teléfono 2',
+    value: LINKS.contacto.telefono2,
+    href: `tel:${LINKS.contacto.telefono2?.replace(/\s/g, '')}`,
   },
   {
     icon: MapPin,
-    label: 'Ubicacion',
+    label: 'Ubicación',
     value: `${EVENT_CONFIG.location.city}, ${EVENT_CONFIG.location.country}`,
   },
   {
     icon: MessageCircle,
     label: 'WhatsApp',
     value: 'Comunidad JCRS',
-    href: LINKS.social.whatsapp,
+    href: LINKS.social.whatsappChannel,
     external: true,
   },
 ]

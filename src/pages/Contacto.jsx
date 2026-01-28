@@ -109,10 +109,10 @@ const Contacto = () => {
                       href={info.href}
                       target={info.external ? '_blank' : undefined}
                       rel={info.external ? 'noopener noreferrer' : undefined}
-                      className="flex items-center gap-4 p-4 rounded-xl bg-bg-card border border-white/10 hover:border-primary-red/50 transition-colors"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-bg-card border border-white/10 hover:border-primary-green/50 transition-colors"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-primary-red/20 flex items-center justify-center">
-                        <info.icon className="w-6 h-6 text-primary-red" />
+                      <div className="w-12 h-12 rounded-xl bg-primary-green/20 flex items-center justify-center">
+                        <info.icon className="w-6 h-6 text-primary-green" />
                       </div>
                       <div>
                         <p className="text-text-muted text-sm">{info.label}</p>
@@ -121,8 +121,8 @@ const Contacto = () => {
                     </a>
                   ) : (
                     <div className="flex items-center gap-4 p-4 rounded-xl bg-bg-card border border-white/10">
-                      <div className="w-12 h-12 rounded-xl bg-primary-red/20 flex items-center justify-center">
-                        <info.icon className="w-6 h-6 text-primary-red" />
+                      <div className="w-12 h-12 rounded-xl bg-primary-green/20 flex items-center justify-center">
+                        <info.icon className="w-6 h-6 text-primary-green" />
                       </div>
                       <div>
                         <p className="text-text-muted text-sm">{info.label}</p>

@@ -25,6 +25,13 @@ const CAROUSEL_IMAGES = [
   },
 ]
 
+// Organizadores
+const ORGANIZADORES = [
+  'La Sociedad Científica Médico Estudiantil Peruana (SOCIMEP)',
+  'Facultad de Medicina Humana de la Universidad Católica de Santa María',
+  'Centro de Investigación y Estudios Médicos (CIEM)',
+]
+
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0)
 
@@ -50,7 +57,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
       {/* Carrusel de Imágenes de Fondo */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -67,7 +74,7 @@ const Hero = () => {
       </AnimatePresence>
 
       {/* Dark Overlay with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/80 via-black/50 to-bg-primary/90" />
 
       {/* Indicadores del carrusel */}
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
@@ -77,7 +84,7 @@ const Hero = () => {
             onClick={() => setCurrentImage(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentImage
-                ? 'bg-primary-red w-6'
+                ? 'bg-primary-green w-6'
                 : 'bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Ir a imagen ${index + 1}`}
@@ -88,14 +95,14 @@ const Hero = () => {
       {/* Botones de navegación */}
       <button
         onClick={prevImage}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-black/50 transition-all"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-primary-blue/50 transition-all"
         aria-label="Imagen anterior"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextImage}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-black/50 transition-all"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-primary-blue/50 transition-all"
         aria-label="Siguiente imagen"
       >
         <ChevronRight className="w-6 h-6" />
@@ -106,12 +113,12 @@ const Hero = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-          className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-primary-red/10 to-transparent rounded-full blur-3xl"
+          className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-primary-blue/10 to-transparent rounded-full blur-3xl"
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-          className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-secondary-blue/10 to-transparent rounded-full blur-3xl"
+          className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-primary-green/10 to-transparent rounded-full blur-3xl"
         />
       </div>
 
@@ -122,15 +129,23 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
+          {/* Organiza Badge */}
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: 'spring' }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-primary-red animate-pulse" />
-            <span className="text-white/90 text-sm font-medium">Organiza: {EVENT_CONFIG.organizer}</span>
+            <span className="inline-block text-xs uppercase tracking-wider text-primary-blue font-semibold mb-2">
+              Organiza
+            </span>
+            <div className="flex flex-col gap-1">
+              {ORGANIZADORES.map((org, index) => (
+                <p key={index} className="text-white/80 text-xs sm:text-sm">
+                  {org}
+                </p>
+              ))}
+            </div>
           </motion.div>
 
           {/* Title */}
@@ -155,12 +170,12 @@ const Hero = () => {
 
           {/* Event Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
-            <div className="flex items-center gap-2 text-white/90 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-white/10">
-              <Calendar className="w-4 h-4 text-primary-red" />
+            <div className="flex items-center gap-2 text-white/90 bg-primary-blue/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-primary-blue/30">
+              <Calendar className="w-4 h-4 text-primary-blue" />
               <span>{EVENT_CONFIG.dates.formatted}</span>
             </div>
-            <div className="flex items-center gap-2 text-white/90 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-white/10">
-              <MapPin className="w-4 h-4 text-primary-red" />
+            <div className="flex items-center gap-2 text-white/90 bg-primary-green/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-primary-green/30">
+              <MapPin className="w-4 h-4 text-primary-green" />
               <span>{EVENT_CONFIG.location.city}, {EVENT_CONFIG.location.country}</span>
             </div>
           </div>

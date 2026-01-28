@@ -3,9 +3,9 @@ import { Loader2 } from 'lucide-react'
 import { classNames } from '../../utils/helpers'
 
 const variants = {
-  primary: 'bg-primary-red hover:bg-primary-dark text-white shadow-lg shadow-primary-red/25 hover:shadow-primary-red/40',
-  secondary: 'bg-secondary-blue hover:bg-secondary-dark text-white',
-  outline: 'border-2 border-primary-red text-primary-red hover:bg-primary-red hover:text-white',
+  primary: 'bg-primary-green hover:bg-primary-dark text-white shadow-lg shadow-primary-green/25 hover:shadow-primary-green/40',
+  secondary: 'bg-secondary-green hover:bg-secondary-dark text-white',
+  outline: 'border-2 border-primary-green text-primary-green hover:bg-primary-green hover:text-white',
   ghost: 'text-text-secondary hover:text-white hover:bg-white/10',
 }
 
@@ -33,7 +33,7 @@ const Button = ({
       whileHover={{ scale: isDisabled ? 1 : 1.02 }}
       whileTap={{ scale: isDisabled ? 1 : 0.98 }}
       className={classNames(
-        'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-red/50',
+        'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-green/50',
         variants[variant],
         sizes[size],
         isDisabled && 'opacity-50 cursor-not-allowed',

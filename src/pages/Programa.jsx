@@ -75,7 +75,7 @@ const schedule = [
 
 const typeColors = {
   registro: 'border-l-accent-gold',
-  ceremonia: 'border-l-primary-red',
+  ceremonia: 'border-l-primary-green',
   conferencia: 'border-l-secondary-blue',
   taller: 'border-l-accent-purple',
   presentacion: 'border-l-accent-green',
@@ -130,7 +130,7 @@ const Programa = () => {
                 onClick={() => setSelectedDay(index)}
                 className={`px-4 py-3 rounded-xl transition-all ${
                   selectedDay === index
-                    ? 'bg-primary-red text-white'
+                    ? 'bg-primary-green text-white'
                     : 'bg-bg-card text-text-secondary hover:text-white'
                 }`}
               >

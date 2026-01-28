@@ -3,19 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --primary-red: #DC2626;
-  --primary-dark: #991B1B;
-  --secondary-blue: #1E40AF;
-  --secondary-dark: #1E3A8A;
-  --bg-primary: #0F0F0F;
-  --bg-secondary: #1A1A1A;
-  --bg-card: #252525;
+  /* Greens */
+  --primary-green: #22C55E;
+  --primary-dark: #16A34A;
+  --primary-light: #4ADE80;
+  --secondary-green: #15803D;
+  --secondary-dark: #166534;
+  /* Blues */
+  --primary-blue: #3B82F6;
+  --primary-blue-dark: #2563EB;
+  --primary-blue-light: #60A5FA;
+  --secondary-blue: #1D4ED8;
+  --accent-blue: #0EA5E9;
+  /* Backgrounds - Dark blue */
+  --bg-primary: #0A1628;
+  --bg-secondary: #0F1E32;
+  --bg-card: #162236;
+  /* Text */
   --text-primary: #FFFFFF;
-  --text-secondary: #A1A1A1;
-  --text-muted: #6B6B6B;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  /* Accents */
   --accent-gold: #F59E0B;
-  --accent-green: #10B981;
-  --accent-purple: #8B5CF6;
+  --accent-lime: #84CC16;
+  --accent-emerald: #10B981;
 }
 
 * {
@@ -47,47 +58,56 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-red);
+  background: var(--primary-blue);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
+  background: var(--primary-green);
 }
 
 /* Selección de texto */
 ::selection {
-  background: var(--primary-red);
+  background: var(--primary-green);
   color: white;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-red hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-red/25;
+    @apply bg-primary-green hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/25;
   }
 
   .btn-secondary {
-    @apply bg-secondary-blue hover:bg-secondary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+    @apply bg-primary-blue hover:bg-primary-blue-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-blue/25;
   }
 
   .btn-outline {
-    @apply border-2 border-primary-red text-primary-red hover:bg-primary-red hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+    @apply border-2 border-primary-green text-primary-green hover:bg-primary-green hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+  }
+
+  .btn-outline-blue {
+    @apply border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
   }
 
   .card {
-    @apply bg-bg-card/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-primary-red/50;
+    @apply bg-bg-card/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-primary-blue/50;
   }
 
   .card-hover {
-    @apply hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-red/10;
+    @apply hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-blue/10;
   }
 
   .input-field {
-    @apply w-full bg-bg-secondary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-text-muted focus:outline-none focus:border-primary-red focus:ring-2 focus:ring-primary-red/20 transition-all duration-300;
+    @apply w-full bg-bg-secondary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-text-muted focus:outline-none transition-all duration-300;
+  }
+
+  .input-field:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-red via-accent-gold to-secondary-blue;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-green via-accent-blue to-primary-blue;
   }
 
   .glass {

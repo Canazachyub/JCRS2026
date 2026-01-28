@@ -68,8 +68,8 @@ const BaseCard = ({ title, url, icon: Icon, imageIndex = 0 }) => (
     {/* Content */}
     <div className="relative p-6 min-h-[200px] flex flex-col items-center justify-center text-center">
       {/* Icon */}
-      <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center mb-4 shadow-lg">
-        <Icon className="w-7 h-7 text-primary-red" />
+      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg">
+        <Icon className="w-7 h-7 text-gray-700" />
       </div>
 
       {/* Title Badge */}
@@ -102,7 +102,7 @@ const Home = () => {
         <Hero />
 
         {/* Bases Científicas Section */}
-        <section id="links" className="py-16 px-4 bg-gray-900">
+        <section id="links" className="py-16 px-4 bg-bg-secondary">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
             <motion.div
@@ -111,10 +111,10 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-red mb-2">
-                Te presentamos las Bases Científicas
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Te presentamos las <span className="text-primary-green">Bases</span> <span className="text-primary-blue">Científicas</span>
               </h2>
-              <p className="text-gray-400">
+              <p className="text-text-secondary">
                 Aquí encontrarás toda la información, según tu modalidad
               </p>
             </motion.div>
@@ -155,7 +155,7 @@ const Home = () => {
               className="mb-12"
             >
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <span className="w-1 h-6 bg-primary-red rounded-full" />
+                <span className="w-1 h-6 bg-primary-blue rounded-full" />
                 Documentación para el Concurso Científico
               </h2>
 
@@ -171,18 +171,18 @@ const Home = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-bg-card border border-white/10 hover:border-primary-red/50 transition-all group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-bg-card border border-white/10 hover:border-primary-blue/50 transition-all group"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-secondary-blue/20 flex items-center justify-center">
-                      <ClipboardList className="w-5 h-5 text-secondary-blue" />
+                    <div className="w-10 h-10 rounded-lg bg-primary-blue/20 flex items-center justify-center">
+                      <ClipboardList className="w-5 h-5 text-primary-blue" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-white font-medium text-sm group-hover:text-primary-red transition-colors">
+                      <h4 className="text-white font-medium text-sm group-hover:text-primary-blue transition-colors">
                         {doc.nombre}
                       </h4>
                       <p className="text-text-muted text-xs truncate">{doc.descripcion}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-text-muted group-hover:text-primary-red transition-colors" />
+                    <ExternalLink className="w-4 h-4 text-text-muted group-hover:text-primary-blue transition-colors" />
                   </motion.a>
                 ))}
               </div>
@@ -196,16 +196,16 @@ const Home = () => {
               className="mb-12"
             >
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <span className="w-1 h-6 bg-primary-red rounded-full" />
+                <span className="w-1 h-6 bg-accent-blue rounded-full" />
                 Calendario General - Fechas Clave
               </h2>
-              <div className="bg-bg-card rounded-xl border border-white/10 overflow-hidden">
+              <div className="bg-bg-card rounded-xl border border-accent-blue/20 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-primary-red/20">
+                    <thead className="bg-accent-blue/20">
                       <tr>
-                        <th className="text-left p-4 text-primary-red font-semibold">Fecha</th>
-                        <th className="text-left p-4 text-primary-red font-semibold">Evento</th>
+                        <th className="text-left p-4 text-accent-blue font-semibold">Fecha</th>
+                        <th className="text-left p-4 text-accent-blue font-semibold">Evento</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -366,24 +366,24 @@ const Home = () => {
             >
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <span className="w-1 h-6 bg-primary-red rounded-full" />
-                  <Stethoscope className="w-5 h-5 text-primary-red" />
+                  <span className="w-1 h-6 bg-primary-green rounded-full" />
+                  <Stethoscope className="w-5 h-5 text-primary-green" />
                   {CRONOGRAMA_CASO_CLINICO.nombre}
                 </h2>
-                <a href={CRONOGRAMA_CASO_CLINICO.basesUrl} target="_blank" rel="noopener noreferrer" className="text-primary-red text-sm hover:underline flex items-center gap-1">
+                <a href={CRONOGRAMA_CASO_CLINICO.basesUrl} target="_blank" rel="noopener noreferrer" className="text-primary-green text-sm hover:underline flex items-center gap-1">
                   Ver Bases <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
 
               {/* Cronograma */}
-              <div className="bg-bg-card rounded-xl border border-primary-red/20 overflow-hidden mb-4">
+              <div className="bg-bg-card rounded-xl border border-primary-green/20 overflow-hidden mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-primary-red/10">
+                    <thead className="bg-primary-green/10">
                       <tr>
-                        <th className="text-left p-3 text-primary-red font-semibold">Fecha</th>
-                        <th className="text-left p-3 text-primary-red font-semibold">Actividad</th>
-                        <th className="text-left p-3 text-primary-red font-semibold">Nota</th>
+                        <th className="text-left p-3 text-primary-green font-semibold">Fecha</th>
+                        <th className="text-left p-3 text-primary-green font-semibold">Actividad</th>
+                        <th className="text-left p-3 text-primary-green font-semibold">Nota</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -409,12 +409,12 @@ const Home = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -3 }}
-                      className="p-4 rounded-lg bg-primary-red/10 border border-primary-red/30 hover:border-primary-red/60 transition-all group"
+                      className="p-4 rounded-lg bg-primary-green/10 border border-primary-green/30 hover:border-primary-green/60 transition-all group"
                     >
                       <div className="flex items-center gap-3">
-                        <ClipboardList className="w-5 h-5 text-primary-red" />
+                        <ClipboardList className="w-5 h-5 text-primary-green" />
                         <div>
-                          <h4 className="text-white text-sm font-medium group-hover:text-primary-red transition-colors">{form.nombre}</h4>
+                          <h4 className="text-white text-sm font-medium group-hover:text-primary-green transition-colors">{form.nombre}</h4>
                           <p className="text-text-muted text-xs">{form.descripcion}</p>
                         </div>
                       </div>

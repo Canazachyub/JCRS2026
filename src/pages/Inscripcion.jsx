@@ -1,43 +1,40 @@
-import { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { User, Users, Search, ArrowLeft, CheckCircle } from 'lucide-react'
+import { ArrowLeft, ExternalLink, CheckCircle, Phone, AlertCircle } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/common/Navbar'
 import Footer from '../components/common/Footer'
 import Card from '../components/common/Card'
 import Button from '../components/common/Button'
-import FormIndividual from '../components/inscripcion/FormIndividual'
-import FormCorporativo from '../components/inscripcion/FormCorporativo'
-import PaymentInfo from '../components/inscripcion/PaymentInfo'
-
-const tabs = [
-  { id: 'individual', label: 'Individual', icon: User },
-  { id: 'corporativo', label: 'Corporativo', icon: Users },
-  { id: 'consultar', label: 'Consultar', icon: Search },
-]
+import {
+  INSCRIPCION_URL,
+  PASOS_INSCRIPCION,
+  PREINSCRIPCION,
+  INSCRIPCION_REGULAR,
+  LINKS,
+  IMAGES,
+} from '../utils/constants'
 
 const Inscripcion = () => {
-  const { tipo } = useParams()
   const navigate = useNavigate()
-  const [activeTab, setActiveTab] = useState(tipo || 'individual')
-  const [successData, setSuccessData] = useState(null)
-
-  const handleSuccess = (data) => {
-    setSuccessData(data)
-  }
-
-  const handleTabChange = (tabId) => {
-    setActiveTab(tabId)
-    setSuccessData(null)
-    navigate(`/inscripcion/${tabId}`)
-  }
 
   return (
     <div className="min-h-screen bg-bg-primary">
       <Navbar />
 
-      <main className="pt-24 pb-16 px-4">
-        <div className="max-w-4xl mx-auto">
+      {/* Hero Section with Background */}
+      <section className="relative pt-24 md:pt-32 pb-16 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('${IMAGES.paisajeMisti}')`,
+          }}
+        />
+        {/* Green Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-green/80 via-primary-dark/70 to-bg-primary" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -48,108 +45,176 @@ const Inscripcion = () => {
               variant="ghost"
               icon={ArrowLeft}
               onClick={() => navigate('/')}
-              className="mb-4"
+              className="mb-4 text-white hover:bg-white/20"
             >
               Volver al inicio
             </Button>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              Inscripcion
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+              Inscripción
             </h1>
-            <p className="text-text-secondary">
-              XXIX Jornada Cientifica Regional Sur - Arequipa 2026
+            <p className="text-white/90 drop-shadow">
+              XXIX Jornada Científica Regional Sur - Arequipa 2026
             </p>
           </motion.div>
 
-          {/* Tabs */}
+          {/* Main Button - INSCRIBIRME */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="flex justify-center gap-2 mb-8"
+            className="text-center mb-12"
           >
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabChange(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all ${
-                  activeTab === tab.id
-                    ? 'bg-primary-red text-white'
-                    : 'bg-bg-card text-text-secondary hover:text-white hover:bg-bg-card/80'
-                }`}
-              >
-                <tab.icon className="w-4 h-4" />
-                <span className="hidden sm:inline">{tab.label}</span>
-              </button>
-            ))}
+            <a
+              href={INSCRIPCION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-primary-green hover:bg-primary-dark text-white font-bold text-xl py-4 px-10 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/30 hover:scale-105 border-2 border-white/20"
+            >
+              <ExternalLink className="w-6 h-6" />
+              INSCRIBIRME
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <main className="pb-16 px-4 bg-bg-primary">
+        <div className="max-w-4xl mx-auto">
+          {/* Pasos para inscribirse */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-12 -mt-8"
+          >
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1 h-8 bg-primary-green rounded-full" />
+              Pasos para Inscribirme
+            </h2>
+
+            <div className="space-y-4">
+              {PASOS_INSCRIPCION.map((paso, index) => (
+                <motion.div
+                  key={paso.numero}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex gap-4 p-4 rounded-xl bg-bg-card/90 backdrop-blur-sm border border-white/10 hover:border-primary-green/30 transition-colors"
+                >
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-green flex items-center justify-center text-white font-bold">
+                    {paso.numero}
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">{paso.titulo}</h3>
+                    <p className="text-text-secondary text-sm">{paso.descripcion}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Form */}
-            <Card hover={false}>
-              {successData ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-8"
-                >
-                  <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-400" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Inscripcion Exitosa
-                  </h3>
-                  <p className="text-text-secondary mb-4">
-                    Tu codigo de inscripcion es:
-                  </p>
-                  <p className="text-2xl font-mono font-bold text-primary-red mb-6">
-                    {successData.codigo}
-                  </p>
-                  <p className="text-text-muted text-sm mb-6">
-                    Hemos enviado los detalles a tu correo electronico
-                  </p>
-                  <Button onClick={() => setSuccessData(null)}>
-                    Nueva Inscripcion
-                  </Button>
-                </motion.div>
-              ) : (
-                <>
-                  {activeTab === 'individual' && (
-                    <FormIndividual onSuccess={handleSuccess} />
-                  )}
-                  {activeTab === 'corporativo' && (
-                    <FormCorporativo onSuccess={handleSuccess} />
-                  )}
-                  {activeTab === 'consultar' && (
-                    <div className="space-y-6">
-                      <h3 className="text-lg font-semibold text-white">
-                        Consultar Inscripcion
-                      </h3>
-                      <div>
-                        <label className="block text-sm font-medium text-text-secondary mb-2">
-                          Ingresa tu DNI
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="12345678"
-                          maxLength={8}
-                          className="input-field"
-                        />
-                      </div>
-                      <Button className="w-full" icon={Search}>
-                        Buscar
-                      </Button>
-                    </div>
-                  )}
-                </>
-              )}
-            </Card>
+          {/* Tablas de Precios */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* Preinscripciones */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card hover={false} className="h-full">
+                <h3 className="text-xl font-bold text-primary-green mb-4 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5" />
+                  PREINSCRIPCIONES
+                </h3>
+                <div className="overflow-hidden rounded-lg border border-white/10">
+                  <table className="w-full text-sm">
+                    <thead className="bg-primary-green/20">
+                      <tr>
+                        <th className="text-left p-3 text-primary-green font-semibold">Tipo</th>
+                        <th className="text-left p-3 text-primary-green font-semibold">Fecha</th>
+                        <th className="text-right p-3 text-primary-green font-semibold">Costo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {PREINSCRIPCION.map((item, index) => (
+                        <tr key={index} className="border-t border-white/5 hover:bg-white/5">
+                          <td className="p-3 text-white">{item.tipo}</td>
+                          <td className="p-3 text-text-secondary text-xs">{item.fecha}</td>
+                          <td className="p-3 text-accent-gold font-bold text-right">S/ {item.precio}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+            </motion.div>
 
-            {/* Payment Info */}
-            <Card hover={false}>
-              <PaymentInfo />
-            </Card>
+            {/* Inscripciones Regulares */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Card hover={false} className="h-full">
+                <h3 className="text-xl font-bold text-primary-blue mb-4 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5" />
+                  INSCRIPCIONES
+                </h3>
+                <div className="overflow-hidden rounded-lg border border-white/10">
+                  <table className="w-full text-sm">
+                    <thead className="bg-primary-blue/20">
+                      <tr>
+                        <th className="text-left p-3 text-primary-blue font-semibold">Tipo</th>
+                        <th className="text-left p-3 text-primary-blue font-semibold">Fecha Regular</th>
+                        <th className="text-right p-3 text-primary-blue font-semibold">Costo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {INSCRIPCION_REGULAR.map((item, index) => (
+                        <tr key={index} className="border-t border-white/5 hover:bg-white/5">
+                          <td className="p-3 text-white">{item.tipo}</td>
+                          <td className="p-3 text-text-secondary text-xs">{item.fecha}</td>
+                          <td className="p-3 text-accent-gold font-bold text-right">S/ {item.precio}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+            </motion.div>
           </div>
+
+          {/* Contacto / Dudas */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="text-center"
+          >
+            <Card hover={false} className="inline-block">
+              <div className="flex items-center gap-3 text-text-secondary">
+                <AlertCircle className="w-5 h-5 text-accent-gold" />
+                <span>Dudas o consultas a</span>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-3">
+                <a
+                  href={`tel:${LINKS.contacto.telefono1.replace(/\s/g, '')}`}
+                  className="flex items-center gap-2 text-primary-green hover:text-primary-light transition-colors font-semibold"
+                >
+                  <Phone className="w-4 h-4" />
+                  {LINKS.contacto.telefono1}
+                </a>
+                <span className="hidden sm:inline text-text-muted">o</span>
+                <a
+                  href={`tel:${LINKS.contacto.telefono2.replace(/\s/g, '')}`}
+                  className="flex items-center gap-2 text-primary-green hover:text-primary-light transition-colors font-semibold"
+                >
+                  <Phone className="w-4 h-4" />
+                  {LINKS.contacto.telefono2}
+                </a>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </main>
 

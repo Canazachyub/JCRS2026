@@ -146,8 +146,8 @@ const Bases = () => {
                     onClick={() => navigate(`/bases/${cat.id}`)}
                     className="cursor-pointer text-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-primary-red/20 flex items-center justify-center mx-auto mb-4">
-                      <cat.icon className="w-8 h-8 text-primary-red" />
+                    <div className="w-16 h-16 rounded-full bg-primary-green/20 flex items-center justify-center mx-auto mb-4">
+                      <cat.icon className="w-8 h-8 text-primary-green" />
                     </div>
                     <h3 className="text-white font-semibold">{cat.label}</h3>
                   </Card>
@@ -184,8 +184,8 @@ const Bases = () => {
               Volver a categorías
             </Button>
 
-            <div className="w-20 h-20 rounded-full bg-primary-red/20 flex items-center justify-center mx-auto mb-4">
-              <Icon className="w-10 h-10 text-primary-red" />
+            <div className="w-20 h-20 rounded-full bg-primary-green/20 flex items-center justify-center mx-auto mb-4">
+              <Icon className="w-10 h-10 text-primary-green" />
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">

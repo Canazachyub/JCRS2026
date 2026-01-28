@@ -14,9 +14,9 @@ const LinkButton = ({
   delay = 0,
 }) => {
   const variants = {
-    default: 'border-white/10 hover:border-primary-red/50 hover:bg-primary-red/5',
-    primary: 'border-primary-red/30 bg-primary-red/10 hover:bg-primary-red/20',
-    secondary: 'border-secondary-blue/30 bg-secondary-blue/10 hover:bg-secondary-blue/20',
+    default: 'border-white/10 hover:border-primary-green/50 hover:bg-primary-green/5',
+    primary: 'border-primary-green/30 bg-primary-green/10 hover:bg-primary-green/20',
+    secondary: 'border-secondary-green/30 bg-secondary-green/10 hover:bg-secondary-green/20',
   }
 
   const content = (
@@ -32,13 +32,13 @@ const LinkButton = ({
       )}
     >
       {/* Icon */}
-      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary-red/20 transition-colors">
-        <Icon className="w-6 h-6 text-primary-red" />
+      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+        <Icon className="w-6 h-6 text-primary-green" />
       </div>
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <h3 className="text-white font-semibold group-hover:text-primary-red transition-colors">
+        <h3 className="text-white font-semibold group-hover:text-primary-green transition-colors">
           {title}
         </h3>
         {description && (
@@ -49,9 +49,9 @@ const LinkButton = ({
       {/* Arrow */}
       <div className="flex-shrink-0">
         {isExternal ? (
-          <ExternalLink className="w-5 h-5 text-text-muted group-hover:text-primary-red transition-colors" />
+          <ExternalLink className="w-5 h-5 text-text-muted group-hover:text-primary-green transition-colors" />
         ) : (
-          <ChevronRight className="w-5 h-5 text-text-muted group-hover:text-primary-red group-hover:translate-x-1 transition-all" />
+          <ChevronRight className="w-5 h-5 text-text-muted group-hover:text-primary-green group-hover:translate-x-1 transition-all" />
         )}
       </div>
     </motion.div>

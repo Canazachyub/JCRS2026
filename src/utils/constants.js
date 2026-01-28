@@ -2,11 +2,10 @@ export const EVENT_CONFIG = {
   name: 'XXIX Jornada Científica Regional Sur',
   shortName: 'JCRS Arequipa 2026',
   slogan: 'Avances en el Manejo Integral de Enfermedades Crónicas, Infecciosas y Oncológicas',
-  organizer: 'CIEM 2026',
   dates: {
     start: '2026-03-06',
-    end: '2026-03-11',
-    formatted: '06 al 11 de Marzo de 2026',
+    end: '2026-03-08',
+    formatted: '6 al 8 de Marzo de 2026',
   },
   location: {
     city: 'Arequipa',
@@ -329,7 +328,8 @@ export const LINKS = {
   },
   contacto: {
     email: 'jcrs.socimep@org.com',
-    telefono: '+51 999 999 999',
+    telefono1: '+51 974 050 383',
+    telefono2: '+51 978 281 215',
   },
 }
 
@@ -429,6 +429,71 @@ export const CRONOGRAMA_CASOS_CLINICOS = {
     },
   },
 }
+
+// URL de inscripción oficial UCSM
+export const INSCRIPCION_URL = 'https://oda.ucsm.edu.pe/UCSMEventosAcademicos/Account/Login?ReturnUrl=%2FUCSMEventosAcademicos%2F%3F_gl%3D1%2A1wt36fc%2A_ga%2AOTA2Nzg3NDI0LjE3Njk2MTExNzU.%2A_ga_J8Y72BQ6PL%2AczE3Njk2MTExNzYkbzEkZzAkdDE3Njk2MTExNzYkajYwJGwwJGgw%2A_ga_LV0SHDLPL7%2AczE3Njk2MTExNzYkbzEkZzAkdDE3Njk2MTExNzYkajYwJGwwJGgw%26_ga%3D2.68960018.225502626.1769611175-906787424.1769611175'
+
+// Pasos para inscribirse
+export const PASOS_INSCRIPCION = [
+  {
+    numero: 1,
+    titulo: 'Ingresar al botón "Inscribirme"',
+    descripcion: 'Haz clic en el botón denominado "Inscribirme" para acceder al sistema de inscripciones.',
+  },
+  {
+    numero: 2,
+    titulo: 'Crear cuenta o iniciar sesión',
+    descripcion: 'Deberás acceder a través de una cuenta con tu DNI y contraseña. Si no tienes cuenta, créala mediante el enlace "Regístrate aquí". La validación se realizará a través de tu correo electrónico. Si la inscripción se realiza desde el extranjero, utiliza tu número de documento de identificación.',
+  },
+  {
+    numero: 3,
+    titulo: 'Completar el formulario',
+    descripcion: 'Llena el formulario con todos los datos requeridos. Se recomienda especial cuidado en el registro de nombres y apellidos, ya que estos serán consignados tal cual en los certificados. Tras verificar la información, haz clic en "Generar Deuda".',
+  },
+  {
+    numero: 4,
+    titulo: 'Realizar el pago',
+    descripcion: 'Al completar este paso, la preinscripción quedará registrada. Para finalizar el proceso, deberás efectuar el pago a través de nuestros mecanismos de pago autorizados. Tu código de pago será tu número de DNI o documento de identificación.',
+  },
+  {
+    numero: 5,
+    titulo: 'Esperar confirmación',
+    descripcion: 'La generación de la deuda en las distintas entidades financieras puede demorar algunos minutos luego de completar el formulario. En caso de presentar inconvenientes, se recomienda volver a ingresar al sistema.',
+  },
+  {
+    numero: 6,
+    titulo: 'Validar inscripción',
+    descripcion: 'Una vez completado el registro y realizado el pago correspondiente, debes registrarte en el sistema para validar correctamente tu inscripción.',
+  },
+]
+
+// Precios de preinscripción
+export const PREINSCRIPCION = [
+  {
+    tipo: 'Primera Preinscripción estudiantes',
+    fecha: '26 de enero - 07 de febrero',
+    precio: 100,
+  },
+  {
+    tipo: 'Segunda Preinscripción estudiantes',
+    fecha: '08 de febrero - 20 de febrero',
+    precio: 111,
+  },
+]
+
+// Precios de inscripción regular
+export const INSCRIPCION_REGULAR = [
+  {
+    tipo: 'Estudiantes',
+    fecha: '21 de febrero - 02 de marzo',
+    precio: 120,
+  },
+  {
+    tipo: 'Profesionales o extranjeros',
+    fecha: '21 de febrero - 02 de marzo',
+    precio: 150,
+  },
+]
 
 export const PRECIOS = {
   individual: {

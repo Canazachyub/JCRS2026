@@ -17,7 +17,7 @@ const Card = ({
       whileHover={hover ? { y: -5, scale: 1.01 } : {}}
       className={classNames(
         'relative bg-bg-card/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300',
-        hover && 'hover:border-primary-red/50 hover:shadow-xl hover:shadow-primary-red/10',
+        hover && 'hover:border-primary-blue/50 hover:shadow-xl hover:shadow-primary-blue/10',
         gradient && 'bg-gradient-card',
         className
       )}

@@ -25,22 +25,22 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Enlaces</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/inscripcion" className="text-text-secondary hover:text-primary-red transition-colors">
+                <Link to="/inscripcion" className="text-text-secondary hover:text-primary-green transition-colors">
                   Inscripcion
                 </Link>
               </li>
               <li>
-                <Link to="/programa" className="text-text-secondary hover:text-primary-red transition-colors">
+                <Link to="/programa" className="text-text-secondary hover:text-primary-green transition-colors">
                   Programa
                 </Link>
               </li>
               <li>
-                <Link to="/bases" className="text-text-secondary hover:text-primary-red transition-colors">
+                <Link to="/bases" className="text-text-secondary hover:text-primary-green transition-colors">
                   Bases
                 </Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-text-secondary hover:text-primary-red transition-colors">
+                <Link to="/contacto" className="text-text-secondary hover:text-primary-green transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -52,17 +52,25 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-text-secondary">
-                <Mail className="w-4 h-4 text-primary-red" />
-                <a href={`mailto:${LINKS.contacto.email}`} className="hover:text-primary-red transition-colors">
+                <Mail className="w-4 h-4 text-primary-green" />
+                <a href={`mailto:${LINKS.contacto.email}`} className="hover:text-primary-green transition-colors">
                   {LINKS.contacto.email}
                 </a>
               </li>
               <li className="flex items-center gap-2 text-text-secondary">
-                <Phone className="w-4 h-4 text-primary-red" />
-                <span>{LINKS.contacto.telefono}</span>
+                <Phone className="w-4 h-4 text-primary-green" />
+                <a href={`tel:${LINKS.contacto.telefono1}`} className="hover:text-primary-green transition-colors">
+                  {LINKS.contacto.telefono1}
+                </a>
               </li>
               <li className="flex items-center gap-2 text-text-secondary">
-                <MapPin className="w-4 h-4 text-primary-red" />
+                <Phone className="w-4 h-4 text-primary-green" />
+                <a href={`tel:${LINKS.contacto.telefono2}`} className="hover:text-primary-green transition-colors">
+                  {LINKS.contacto.telefono2}
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-text-secondary">
+                <MapPin className="w-4 h-4 text-primary-green" />
                 <span>{EVENT_CONFIG.location.city}, {EVENT_CONFIG.location.country}</span>
               </li>
             </ul>
@@ -76,7 +84,7 @@ const Footer = () => {
                 href={LINKS.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-text-secondary hover:bg-primary-red hover:text-white transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-text-secondary hover:bg-primary-green hover:text-white transition-all"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -84,7 +92,7 @@ const Footer = () => {
                 href={LINKS.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-text-secondary hover:bg-secondary-blue hover:text-white transition-all"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-text-secondary hover:bg-secondary-green hover:text-white transition-all"
               >
                 <Facebook className="w-5 h-5" />
               </a>

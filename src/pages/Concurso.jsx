@@ -77,7 +77,7 @@ const Concurso = () => {
                 transition={{ delay: catIndex * 0.1 }}
               >
                 <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-1 h-6 bg-primary-red rounded-full" />
+                  <span className="w-1 h-6 bg-primary-green rounded-full" />
                   {categoria.categoria}
                 </h2>
 
@@ -98,7 +98,7 @@ const Concurso = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="mt-12 p-6 rounded-xl bg-gradient-to-r from-primary-red/10 to-secondary-blue/10 border border-white/10 text-center"
+            className="mt-12 p-6 rounded-xl bg-gradient-to-r from-primary-green/10 to-secondary-blue/10 border border-white/10 text-center"
           >
             <h3 className="text-white font-semibold mb-2">Menciones Honrosas</h3>
             <p className="text-text-secondary">

@@ -40,19 +40,19 @@ const Navbar = () => {
       {/* Logo Strip - Desktop */}
       <div className="hidden md:block bg-gradient-to-r from-primary-green/90 via-primary-dark/85 to-primary-green/90 backdrop-blur-sm border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-10 py-3">
+          <div className="flex items-center justify-center gap-8 py-3">
             {LOGOS.map((logo, index) => (
               <motion.div
                 key={logo.alt}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center justify-center h-14 px-2"
+                className="flex items-center justify-center w-32 h-14"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 w-auto object-contain filter brightness-110 hover:brightness-125 hover:scale-110 transition-all duration-300 drop-shadow-lg"
+                  className="max-h-12 max-w-28 object-contain filter brightness-110 hover:brightness-125 hover:scale-110 transition-all duration-300 drop-shadow-lg"
                 />
               </motion.div>
             ))}
@@ -134,16 +134,16 @@ const Navbar = () => {
             className="md:hidden bg-bg-secondary border-t border-white/10"
           >
             {/* Mobile Logo Strip */}
-            <div className="flex items-center justify-center gap-4 py-3 border-b border-white/10 bg-gradient-to-r from-primary-green/90 via-primary-dark/85 to-primary-green/90">
+            <div className="flex items-center justify-center gap-3 py-3 border-b border-white/10 bg-gradient-to-r from-primary-green/90 via-primary-dark/85 to-primary-green/90">
               {LOGOS.map((logo) => (
                 <div
                   key={logo.alt}
-                  className="flex items-center justify-center h-10 px-1"
+                  className="flex items-center justify-center w-16 h-10"
                 >
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-9 w-auto object-contain filter brightness-110 drop-shadow-md"
+                    className="max-h-9 max-w-14 object-contain filter brightness-110 drop-shadow-md"
                   />
                 </div>
               ))}

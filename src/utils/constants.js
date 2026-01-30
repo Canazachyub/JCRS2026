@@ -464,6 +464,8 @@ export const PASOS_INSCRIPCION = [
     numero: 6,
     titulo: 'Validar inscripción',
     descripcion: 'Una vez completado el registro y realizado el pago correspondiente, debes registrarte en el sistema para validar correctamente tu inscripción.',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSczz4Zl--u2LMvgOs9O2cTPh7XZjDc3PjBDAZgoRYUJe3WOUw/viewform',
+    linkText: 'Validar mi inscripción',
   },
 ]
 

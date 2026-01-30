@@ -105,9 +105,20 @@ const Inscripcion = () => {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-green flex items-center justify-center text-white font-bold">
                     {paso.numero}
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-white font-semibold mb-1">{paso.titulo}</h3>
                     <p className="text-text-secondary text-sm">{paso.descripcion}</p>
+                    {paso.link && (
+                      <a
+                        href={paso.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 mt-3 bg-primary-green hover:bg-primary-light text-white font-semibold text-sm py-2 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {paso.linkText || 'Ir al formulario'}
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}

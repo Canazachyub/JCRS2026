@@ -215,7 +215,7 @@ const Hero = () => {
             className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href={LINKS.whatsapp}
+              href={LINKS.social.whatsappChannel}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-[#25D366]/40 hover:shadow-xl hover:scale-105"
@@ -224,7 +224,7 @@ const Hero = () => {
               Comunidad WhatsApp
             </a>
             <a
-              href={LINKS.instagram}
+              href={LINKS.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-[#833AB4]/40 hover:shadow-xl hover:scale-105"

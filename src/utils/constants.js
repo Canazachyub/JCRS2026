@@ -49,7 +49,7 @@ export const BASES_CIENTIFICAS = {
     id: 'atlas',
     nombre: 'Atlas Científico',
     descripcion: 'Bases para el concurso de Atlas Científico',
-    url: 'https://drive.google.com/file/d/1ObbL4DWFgnVtRpAa0V_hFR0E4rijY1Xo/view',
+    url: 'https://drive.google.com/file/d/1gVibuCEjtEeN6WnYOxp3am2wUdI3m202/view?usp=drivesdk',
     icon: 'BookOpen',
   },
 }
@@ -270,7 +270,7 @@ export const CRONOGRAMA_CASO_CLINICO = {
 // 4. ATLAS CIENTÍFICO - Cronograma
 export const CRONOGRAMA_ATLAS = {
   nombre: 'Atlas Científico (Fotografía/Ilustración)',
-  basesUrl: 'https://drive.google.com/file/d/1ObbL4DWFgnVtRpAa0V_hFR0E4rijY1Xo/view',
+  basesUrl: 'https://drive.google.com/file/d/1gVibuCEjtEeN6WnYOxp3am2wUdI3m202/view?usp=drivesdk',
   actividades: [
     { fecha: '23/01/2026', actividad: 'Apertura de convocatoria', nota: '' },
     { fecha: '21/02/2026', actividad: 'Cierre de recepción', nota: 'Álbum PDF/Word 30-40 páginas' },
@@ -299,6 +299,7 @@ export const FORMULARIOS_EXTRAS = {
     nombre: 'Meme Científico',
     descripcion: 'Inscripción para concurso de Meme Científico',
     url: 'https://docs.google.com/forms/d/e/1FAIpQLSfObgX1IdTtPBs5sRqGm6JK_XYUnN44biEbUAU_lE4pF3VMPg/viewform',
+    basesUrl: 'https://drive.google.com/file/d/1Uzy-mT0KYNiMh6SkIHXWnGp86U4uV8e9/view?usp=drivesdk',
     icon: 'Smile',
   },
 }

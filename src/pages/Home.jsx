@@ -497,21 +497,38 @@ const Home = () => {
                 Meme Científico
               </h2>
 
-              <motion.a
-                href={FORMULARIOS_EXTRAS.meme.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5 }}
-                className="block p-6 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 border border-accent-gold/30 hover:border-accent-gold/60 transition-all text-center group max-w-md"
-              >
-                <div className="w-14 h-14 rounded-full bg-accent-gold/20 flex items-center justify-center mx-auto mb-3">
-                  <Smile className="w-7 h-7 text-accent-gold" />
-                </div>
-                <h4 className="text-white font-semibold group-hover:text-accent-gold transition-colors">
-                  Inscríbete al Concurso
-                </h4>
-                <p className="text-text-muted text-sm mt-1">{FORMULARIOS_EXTRAS.meme.descripcion}</p>
-              </motion.a>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-2xl">
+                <motion.a
+                  href={FORMULARIOS_EXTRAS.meme.basesUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -5 }}
+                  className="flex-1 block p-6 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 border border-accent-gold/30 hover:border-accent-gold/60 transition-all text-center group"
+                >
+                  <div className="w-14 h-14 rounded-full bg-accent-gold/20 flex items-center justify-center mx-auto mb-3">
+                    <BookOpen className="w-7 h-7 text-accent-gold" />
+                  </div>
+                  <h4 className="text-white font-semibold group-hover:text-accent-gold transition-colors">
+                    Ver Bases
+                  </h4>
+                  <p className="text-text-muted text-sm mt-1">Bases del concurso de Meme Científico</p>
+                </motion.a>
+                <motion.a
+                  href={FORMULARIOS_EXTRAS.meme.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -5 }}
+                  className="flex-1 block p-6 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 border border-accent-gold/30 hover:border-accent-gold/60 transition-all text-center group"
+                >
+                  <div className="w-14 h-14 rounded-full bg-accent-gold/20 flex items-center justify-center mx-auto mb-3">
+                    <Smile className="w-7 h-7 text-accent-gold" />
+                  </div>
+                  <h4 className="text-white font-semibold group-hover:text-accent-gold transition-colors">
+                    Inscríbete al Concurso
+                  </h4>
+                  <p className="text-text-muted text-sm mt-1">{FORMULARIOS_EXTRAS.meme.descripcion}</p>
+                </motion.a>
+              </div>
             </motion.div>
 
             {/* Recursos Adicionales */}
